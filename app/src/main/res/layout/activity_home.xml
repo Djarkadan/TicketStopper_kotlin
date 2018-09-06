@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    tools:layout_editor_absoluteY="89dp">
+
+
+    <ImageButton
+        android:id="@+id/ibtnParkingSpots"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/iBtnLog"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iBtnSavePosition"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnMyPosition"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_satellite_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/iBtnWatcher"
+        android:layout_width="58dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/iBtnLog"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnSavePosition"
+        app:layout_constraintWidth_percent="0.15"
+        app:srcCompat="@drawable/ic_remove_red_eye_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/iBtnSavePosition"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/ibtnParkingSpots"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnAlert"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_save_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/iBtnMyPosition"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/ibtnParkingSpots"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guideline8"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iBtnAlert"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_local_parking_black_24dp"
+        android:tint="#ff963a"/>
+
+    <ImageButton
+        android:id="@+id/iBtnAlert"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/iBtnSavePosition"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/iBtnMyPosition"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        app:srcCompat="@drawable/ic_add_alert_black_24dp"
+        android:tint="#ff4b37"/>
+
+    <ImageButton
+        android:id="@+id/iBtnLog"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="@+id/ibtnParkingSpots"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iBtnWatcher"
+        app:layout_constraintTop_toBottomOf="@+id/ibtnParkingSpots"
+        app:layout_constraintWidth_percent="0.15"
+        app:srcCompat="@drawable/ic_login" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/iBtnWatcher"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toEndOf="@+id/guideline7"
+        app:layout_constraintStart_toStartOf="@+id/iBtnSavePosition"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnSavePosition"
+        app:layout_constraintWidth_percent="0.15"
+        app:srcCompat="@drawable/ic_star_border_black_24dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/tvBtnLog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvBtnLog"
+        app:layout_constraintEnd_toEndOf="@+id/iBtnLog"
+        app:layout_constraintStart_toStartOf="@+id/iBtnLog"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnLog" />
+
+    <TextView
+        android:id="@+id/tvBtnLocalWatcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvBtnLocalWatcher"
+        app:layout_constraintEnd_toEndOf="@+id/iBtnWatcher"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="@+id/iBtnWatcher"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnWatcher" />
+
+    <TextView
+        android:id="@+id/tbBtnMyAlerts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvBtnMyAlerts"
+        app:layout_constraintEnd_toEndOf="@+id/imageButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+    <TextView
+        android:id="@+id/tvBtnAlert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvBtnAlert"
+        app:layout_constraintEnd_toEndOf="@+id/iBtnAlert"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/iBtnAlert"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnAlert" />
+
+    <TextView
+        android:id="@+id/tvBtnMyParking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvBtnParkingConformity"
+        app:layout_constraintEnd_toEndOf="@+id/iBtnMyPosition"
+        app:layout_constraintHorizontal_bias="0.409"
+        app:layout_constraintStart_toStartOf="@+id/iBtnMyPosition"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnMyPosition" />
+
+    <TextView
+        android:id="@+id/tvBtnSavePosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tvBtnRememberParking"
+        app:layout_constraintEnd_toEndOf="@+id/iBtnSavePosition"
+        app:layout_constraintStart_toStartOf="@+id/iBtnSavePosition"
+        app:layout_constraintTop_toBottomOf="@+id/iBtnSavePosition" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tvBtnParkingSpots"
+        app:layout_constraintEnd_toEndOf="@+id/ibtnParkingSpots"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ibtnParkingSpots"
+        app:layout_constraintTop_toBottomOf="@+id/ibtnParkingSpots" />
+
+</android.support.constraint.ConstraintLayout>
