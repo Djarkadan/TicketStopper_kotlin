@@ -7,6 +7,20 @@
     <string name="tvBtnParkingConformity">My parking</string>
     <string name="tvBtnRememberParking">Save my position</string>
     <string name="tvBtnParkingSpots">Parking spots</string>
+    <string name="btnSignText">SIGN IN</string>
+    <string name="btnGoogleSignText">Sign with google</string>
+    <string name="tvSignInHeader">LOGIN TO YOUR ACCOUNT</string>
+    <string name="etUsernameHint">Enter your username</string>
+    <string name="etPasswordHint">Enter your password</string>
+    <string name="tvRegisterHeader">Join our community</string>
+    <string name="etNameHint">Name</string>
+    <string name="etFirstNameHint">First name</string>
+    <string name="etPasswordConfirmHint">Confirm password</string>
+    <string name="etPhoneHint">tel. number</string>
+    <string name="etEmailHint">Email</string>
+    <string name="btnRegisterText">REGISTER</string>
+
+
 
 
 </resources>
