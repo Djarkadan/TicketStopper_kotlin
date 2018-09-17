@@ -11,6 +11,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import android.R.attr.data
 import android.content.Context
+import android.support.constraint.ConstraintSet
+import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -28,7 +30,10 @@ import android.widget.Toast
 import java.util.*
 
 
-class SignInActivity : AppCompatActivity() {
+class SignInActivity : MyAppCompatActivity() {
+    override fun getResourceLayoutId(): Int {
+        return R.id.clSign
+    }
 
 
     lateinit var  googleSignInClient:GoogleSignInClient
@@ -55,7 +60,16 @@ class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+        addBottomNavigationBar()
+        val pagerAdpater: PagerAdapter
+        pagerAdpater = PagerAdapter(supportFragmentManager)
+        vpSign=findViewById(R.id.vpSign)
+        vpSign.adapter=pagerAdpater
 
+
+
+        vpSign.addOnPageChangeListener(object:TabLayout.TabLayoutOnPageChangeListener(tlSign){})
+        tlSign.addOnTabSelectedListener(object:TabLayout.ViewPagerOnTabSelectedListener(vpSign){})
 
 
 //
@@ -64,13 +78,6 @@ class SignInActivity : AppCompatActivity() {
 //
 //         googleSignInClient=GoogleSignIn.getClient(this,gso)
 //        btnGoogleSignIn.setOnClickListener(this)
-
-        val pagerAdpater: PagerAdapter
-        pagerAdpater = PagerAdapter(supportFragmentManager)
-        vpSign=findViewById(R.id.vpSign)
-        vpSign.adapter=pagerAdpater
-
-        vpSign.addOnPageChangeListener(object:TabLayout.TabLayoutOnPageChangeListener(tlSign){})
 
     }
 
@@ -117,8 +124,9 @@ class SignInActivity : AppCompatActivity() {
             }
         }
 
-
-
+        override fun getPageTitle(position: Int): CharSequence? {
+            return super.getPageTitle(position)
+        }
     }
 
       class MyFragment :Fragment(){
@@ -132,6 +140,7 @@ class SignInActivity : AppCompatActivity() {
               fun newInstance(id: Int):MyFragment{
 
                   val fragment=MyFragment()
+
                   val args=Bundle()
                   args.putInt(fragment.idBundelString,id)
                   fragment.arguments=args

@@ -19,6 +19,8 @@
     <string name="etPhoneHint">tel. number</string>
     <string name="etEmailHint">Email</string>
     <string name="btnRegisterText">REGISTER</string>
+    <string name="tabSigInTitleText">SIGN-IN</string>
+    <string name="tabRegisterTitleText">REGISTER</string>
 
 
 

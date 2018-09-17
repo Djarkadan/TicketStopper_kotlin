@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : MyAppCompatActivity() {
+    override fun getResourceLayoutId(): Int {
+        return R.id.clHome
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

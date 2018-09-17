@@ -26,7 +26,7 @@
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="320dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -81,6 +81,8 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/btnSignText"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
         app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
