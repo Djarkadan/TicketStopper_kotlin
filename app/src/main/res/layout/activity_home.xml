@@ -10,152 +10,18 @@
     android:id="@+id/clHome">
 
 
-
-    <ImageButton
-        android:id="@+id/iBtnWatcher"
-        android:layout_width="58dp"
+    <!--<fragment-->
+        <!--android:id="@+id/frgBigButtonsNavigation"-->
+        <!--android:name="com.example.nnaija.tikcetstopper_kotlin.HomeFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent" />-->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:background="@null"
-        android:scaleType="fitXY"
-        app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/tvBtnMyParking"
-        app:layout_constraintWidth_percent="0.15"
-        app:srcCompat="@drawable/ic_remove_red_eye_black_24dp" />
-
-    <ImageButton
-        android:id="@+id/iBtnMyPosition"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        android:background="@null"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/tvBtnMyParking"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/iBtnAlert"
-        app:layout_constraintWidth_percent="0.25"
-        app:srcCompat="@drawable/ic_local_parking_black_24dp" />
-
-    <ImageButton
-        android:id="@+id/iBtnAlert"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@null"
-        android:onClick="onBtnAlertClicked"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/iBtnMyPosition"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:layout_constraintWidth_percent="0.25"
-        app:srcCompat="@drawable/ic_alert" />
-
-    <ImageButton
-        android:id="@+id/iBtnLog"
-        android:layout_width="0dp"
-        android:layout_height="82dp"
-
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        android:onClick="onBtnLogtClicked"
-        android:scaleType="fitXY"
-        app:layout_constraintDimensionRatio="w,1:1"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/iBtnMyPosition"
-        app:layout_constraintWidth_percent="0.15"
-        app:srcCompat="@drawable/ic_login" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="69dp"
-        android:layout_height="78dp"
-
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@null"
-        android:onClick="onBtnLogtClicked"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toTopOf="@+id/iBtnAlert"
-        app:layout_constraintWidth_percent="0.15"
-        app:srcCompat="@drawable/ic_star_border_black_24dp" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.109375" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
-
-    <TextView
-        android:id="@+id/tvBtnLog"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/tvBtnLog"
-        app:layout_constraintEnd_toEndOf="@+id/iBtnLog"
-        app:layout_constraintStart_toStartOf="@+id/iBtnLog"
-        app:layout_constraintTop_toBottomOf="@+id/iBtnLog" />
-
-    <TextView
-        android:id="@+id/tvBtnLocalWatcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvBtnLocalWatcher"
-        app:layout_constraintEnd_toEndOf="@+id/iBtnWatcher"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="@+id/iBtnWatcher"
-        app:layout_constraintTop_toBottomOf="@+id/iBtnWatcher" />
-
-    <TextView
-        android:id="@+id/tbBtnMyAlerts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tvBtnMyAlerts"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-    <TextView
-        android:id="@+id/tvBtnAlert"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/tvBtnAlert"
-        app:layout_constraintEnd_toEndOf="@+id/iBtnAlert"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/iBtnAlert"
-        app:layout_constraintTop_toBottomOf="@+id/iBtnAlert" />
-
-    <TextView
-        android:id="@+id/tvBtnMyParking"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/tvBtnParkingConformity"
-        app:layout_constraintEnd_toEndOf="@+id/iBtnMyPosition"
-        app:layout_constraintHorizontal_bias="0.409"
-        app:layout_constraintStart_toStartOf="@+id/iBtnMyPosition"
-        app:layout_constraintTop_toBottomOf="@+id/iBtnMyPosition" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

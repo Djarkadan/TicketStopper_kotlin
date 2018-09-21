@@ -31,13 +31,16 @@ import java.util.*
 
 
 class SignInActivity : MyAppCompatActivity() {
+    override fun getFragmentContainerID(): Int {
+        return R.id.fragmentContainer
+    }
+
     override fun getResourceLayoutId(): Int {
         return R.id.clSign
     }
 
 
     lateinit var  googleSignInClient:GoogleSignInClient
-
 
     lateinit var vpSign:ViewPager
     val RC_SIGN_IN=100
@@ -60,10 +63,10 @@ class SignInActivity : MyAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
-        addBottomNavigationBar()
+        addBottomNavigationBar(clSign)
         val pagerAdpater: PagerAdapter
         pagerAdpater = PagerAdapter(supportFragmentManager)
-        vpSign=findViewById(R.id.vpSign)
+        vpSign=findViewById(R.id.vpSign1)
         vpSign.adapter=pagerAdpater
 
 
