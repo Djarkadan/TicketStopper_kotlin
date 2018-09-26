@@ -6,6 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
+    <style name="BottomNavigation">
+        <item name="android:background">@android:color/white</item>
+        <item name="itemBackground">@drawable/bottom_navigation_bar_bg</item>
+        <!--<item name="itemIconTint"></item>-->
+        <!--<item name="itemTextColor">@color/bo</item>-->
+        <!--<item name="paddingStart">@android:dimen/notification_large_icon_height</item>-->
+        <!--<item name="paddingEnd">@android:dimen/app_icon_size</item>-->
+    </style>
+
 
 </resources>

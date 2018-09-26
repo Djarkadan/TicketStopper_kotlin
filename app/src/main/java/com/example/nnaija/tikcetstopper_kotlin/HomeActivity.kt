@@ -9,7 +9,11 @@ import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : MyAppCompatActivity(),HomeFragment.OnFragmentInteractionListener ,AcountLogInRegisterFragment.OnFragmentInteractionListener{
+class HomeActivity : MyAppCompatActivity(),
+        HomeFragment.OnFragmentInteractionListener ,
+        AcountLogInRegisterFragment.OnFragmentInteractionListener,
+        AlertFragment.OnFragmentInteractionListener{
+
     override fun getFragmentContainerID(): Int {
         return R.id.fragmentContainer
     }
@@ -17,9 +21,6 @@ class HomeActivity : MyAppCompatActivity(),HomeFragment.OnFragmentInteractionLis
     override fun onFragmentInteraction(uri: Uri) {
     }
 
-    override fun getResourceLayoutId(): Int {
-        return R.id.clHome
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,21 +37,5 @@ class HomeActivity : MyAppCompatActivity(),HomeFragment.OnFragmentInteractionLis
 
 
         }
-
-
-
-
     }
-
-//    fun onBtnAlertClicked(view: View){
-//        Toast.makeText(this,"ss",Toast.LENGTH_LONG).show();
-//    }
-//    fun onBtnLogtClicked(view: View){
-//        val intent=Intent(this,SignInActivity::class.java);
-//        startActivity(intent);
-//    }
-
-
-
-
 }

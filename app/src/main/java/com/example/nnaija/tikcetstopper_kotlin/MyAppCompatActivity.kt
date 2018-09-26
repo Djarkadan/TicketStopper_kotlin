@@ -18,21 +18,9 @@ open abstract class MyAppCompatActivity:AppCompatActivity() {
 
 
     fun addBottomNavigationBar(constraintLayout:ConstraintLayout){
-        val layoutID:Int=getResourceLayoutId()
+        val bottomNavigation: BottomNavigationView = findViewById(R.id.bnb)
 
-        val bottomNavigation: BottomNavigationView = BottomNavigationView(this)
-        bottomNavigation.inflateMenu(R.menu.bottom_bar_menu)
-        bottomNavigation.id= View.generateViewId()
-        val vg: ViewGroup =findViewById(layoutID)
-        val layoutparams: ViewGroup.LayoutParams= ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        vg.addView(bottomNavigation, ViewGroup.LayoutParams(layoutparams))
-
-        var constraint: ConstraintSet = ConstraintSet()
-        constraint.clone(constraintLayout)
-        constraint.connect(bottomNavigation.id, ConstraintSet.BOTTOM,constraintLayout.id, ConstraintSet.BOTTOM)
-        constraint.applyTo(constraintLayout)
-
-    bottomNavigation.setOnNavigationItemSelectedListener{item: MenuItem -> onBottomBtnNavigationPressed(item) }
+        bottomNavigation.setOnNavigationItemSelectedListener{item: MenuItem -> onBottomBtnNavigationPressed(item) }
     }
 
     private fun onBottomBtnNavigationPressed(item: MenuItem): Boolean {
@@ -40,8 +28,8 @@ open abstract class MyAppCompatActivity:AppCompatActivity() {
         val id=item.itemId
         when(item.itemId){
             R.id.bottombaritem_alert->{
-                val homeFragment:HomeFragment=HomeFragment.newInstance()
-                launchFragment(homeFragment)
+                val alertFragment:AlertFragment=AlertFragment.newInstance()
+                launchFragment(alertFragment)
             }
             R.id.bottombaritem_account->{
                 val accountFragment:AcountLogInRegisterFragment=AcountLogInRegisterFragment.newInstance()
@@ -68,6 +56,5 @@ open abstract class MyAppCompatActivity:AppCompatActivity() {
 
 
     }
-    abstract fun getResourceLayoutId():Int
     abstract fun getFragmentContainerID():Int
 }

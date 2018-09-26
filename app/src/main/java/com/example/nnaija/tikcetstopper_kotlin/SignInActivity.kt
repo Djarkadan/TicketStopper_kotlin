@@ -27,16 +27,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import kotlinx.android.synthetic.main.sign_in_tab_fragment.*
 import java.util.*
 
 
 class SignInActivity : MyAppCompatActivity() {
     override fun getFragmentContainerID(): Int {
         return R.id.fragmentContainer
-    }
-
-    override fun getResourceLayoutId(): Int {
-        return R.id.clSign
     }
 
 
@@ -47,18 +44,12 @@ class SignInActivity : MyAppCompatActivity() {
     val TAG="SignIn Activity"
 
 
-//    override fun onClick(v: View) {
-//
-//        when(v.id){
-//            R.id.btnGoogleSignIn->signIn()
-//        }
-//
-//    }
 
-//    private fun signIn() {
-//        val signInIntent=googleSignInClient.signInIntent
-//        startActivityForResult(signInIntent,RC_SIGN_IN)
-//    }
+
+    private fun signIn() {
+        val signInIntent=googleSignInClient.signInIntent
+        startActivityForResult(signInIntent,RC_SIGN_IN)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -132,8 +123,21 @@ class SignInActivity : MyAppCompatActivity() {
         }
     }
 
-      class MyFragment :Fragment(){
-           var  currentFragmentLayout:Int=R.layout.sign_in_tab_fragment
+      class MyFragment :Fragment(),View.OnClickListener{
+          override fun onClick(v: View?) {
+              if (v != null) {
+                  when(v.id){
+                    R.id.btnGoogleSignIn->signIn()
+                  }
+              }
+          }
+
+          private fun signIn() {
+              val x=1
+          }
+
+
+          var  currentFragmentLayout:Int=R.layout.sign_in_tab_fragment
           val idBundelString="id"
           val signInFragmentId=R.layout.sign_in_tab_fragment
           val registerFragmentId=R.layout.register_tab_fragment
@@ -163,6 +167,11 @@ class SignInActivity : MyAppCompatActivity() {
           override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
                super.onCreateView(inflater, container, savedInstanceState)
               val view=inflater.inflate(currentFragmentLayout,container,false)
+
+              if(currentFragmentLayout === signInFragmentId){
+                  val btnGoogleSignIn=view.findViewById<com.google.android.gms.common.SignInButton>(R.id.btnGoogleSignIn)
+                  btnGoogleSignIn.setOnClickListener(this)
+              }
 
               return view
 

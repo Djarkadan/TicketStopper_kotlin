@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <TextView
         android:id="@+id/tvSignInHeader"
@@ -81,7 +82,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="@string/btnSignText"
-        android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorWhite"
         app:layout_constraintEnd_toStartOf="@+id/glMarginRight"
         app:layout_constraintStart_toStartOf="@+id/glMarginLeft"
