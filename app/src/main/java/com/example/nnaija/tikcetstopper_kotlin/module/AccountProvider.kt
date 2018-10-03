@@ -5,4 +5,7 @@ import android.content.Intent
 interface AccountProvider {
     fun getAccount()
     fun sendIntentToProvider()
+    interface onAccountResultReceivedListner{
+        fun onAccountReceived(account:Any)
+    }
 }
