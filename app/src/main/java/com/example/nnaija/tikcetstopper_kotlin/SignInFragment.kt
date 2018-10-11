@@ -1,9 +1,6 @@
 package com.example.nnaija.tikcetstopper_kotlin
 
 
-import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -11,14 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.nnaija.tikcetstopper_kotlin.module.AccountProvider
 import com.example.nnaija.tikcetstopper_kotlin.module.GoogleAccountProvider
-import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.example.nnaija.tikcetstopper_kotlin.module.UserAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import org.w3c.dom.Text
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.tasks.Task
-
-
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -33,15 +24,10 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class SignInFragment : Fragment(),View.OnClickListener,AccountProvider.onAccountResultReceivedListner {
-    override fun onAccountReceived(account: Any) {
-        if (account!=null){
-            // account received
-            
+    override fun onAccountReceived(account: UserAccount) {
 
-        }else{
-            // connexion failed
-        }
     }
+
 
     override fun onClick(v: View?) {
         if(v!=null){
@@ -50,11 +36,12 @@ class SignInFragment : Fragment(),View.OnClickListener,AccountProvider.onAccount
             }
         }
     }
+    private  lateinit var mGoogleSignInClient:GoogleSignInClient
 
     private fun signIn(accountProvider: AccountProvider) {
-        accountProvider.sendIntentToProvider()
-    }
 
+    accountProvider.askForAccountToProvider()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

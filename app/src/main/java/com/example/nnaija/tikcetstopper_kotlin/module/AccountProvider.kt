@@ -1,11 +1,9 @@
 package com.example.nnaija.tikcetstopper_kotlin.module
 
-import android.content.Intent
 
 interface AccountProvider {
-    fun getAccount()
-    fun sendIntentToProvider()
+    fun askForAccountToProvider()
     interface onAccountResultReceivedListner{
-        fun onAccountReceived(account:Any)
+        fun onAccountReceived(account:UserAccount)
     }
 }

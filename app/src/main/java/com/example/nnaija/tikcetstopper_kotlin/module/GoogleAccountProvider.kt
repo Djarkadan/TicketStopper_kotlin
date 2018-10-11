@@ -6,14 +6,12 @@ import android.app.Fragment
 import android.app.FragmentManager
 import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
-import android.R.attr.data
 import android.util.Log
 import com.google.android.gms.common.api.ApiException
 
@@ -29,17 +27,15 @@ class GoogleAccountProvider(context:Context,accountAskerListener:AccountProvider
     private   var account: GoogleSignInAccount? = null
     private  var listener:AccountProvider.onAccountResultReceivedListner?=null
 
-    override fun sendIntentToProvider() {
+    override fun askForAccountToProvider() {
 
         val intent:Intent=googleSignInClient.signInIntent
-//        val activity=context as? Activity
-//        activity?.startActivityForResult(intent,RC_SIGN_IN_REQUEST_CODE)
 
         val fragment:Fragment= @SuppressLint("ValidFragment")
         object:Fragment(){
             override fun onAttach(context: Context?) {
                 super.onAttach(context)
-                startActivityForResult(intent,RC_SIGN_IN_REQUEST_CODE)
+                activity.startActivityForResult(intent,RC_SIGN_IN_REQUEST_CODE)
             }
 
             override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -56,6 +52,11 @@ class GoogleAccountProvider(context:Context,accountAskerListener:AccountProvider
                 }
             }
 
+            override fun onStart() {
+                super.onStart()
+                val account = GoogleSignIn.getLastSignedInAccount(context)
+                if(account!=null)googleSignInClient?.signOut()
+            }
         }
 
         fManager?.beginTransaction()?.add(fragment,"test")?.commit()
@@ -65,18 +66,17 @@ class GoogleAccountProvider(context:Context,accountAskerListener:AccountProvider
     private fun handleSignInResult(task: Task<GoogleSignInAccount>?) {
         try {
             val account:GoogleSignInAccount?=task?.getResult(ApiException::class.java)
-                this.account=account
-                listener?.onAccountReceived(account!!)
+            val googleUserAccount:GoogleUserAccount=GoogleUserAccount(account)
+
+                listener?.onAccountReceived(googleUserAccount)
 
 
         }catch (e:ApiException){
-            Log.w("s", "signInResult:failed code=" + e.statusCode)
+            Log.w("testError", "signInResult:failed code=" + e.statusCode)
         }
     }
 
 
-    override fun getAccount() {
-    }
 
 
     init {
